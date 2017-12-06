@@ -49,7 +49,7 @@ public class StudentInfo implements BindingAdapterType{
         this.avator = avator;
     }
 
-    @BindingAdapter("bind:avator")
+    @BindingAdapter("avator")
     public static void setUserInfoAvtor(ImageView imageView, String avator) {
         Glide.with(imageView.getContext()).load(avator).into(imageView);
     }

@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
             if (userInfoList!=null) {
                 mBinding.recycler.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
                 mBinding.recycler.setAdapter(new MultipleBindingAdapter(userInfoList,MainActivity.this));
+                mBinding.refresh.setEnableLoadmore(true);
+                mBinding.refresh.setEnableRefresh(true);
+                mBinding.refresh.setTargetView(mBinding.recycler);
             }
             mBinding.executePendingBindings();
         });
