@@ -30,6 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.lcodecore.tkrefreshlayout.TwinklingRefreshLayout
+            android:id="@+id/refresh"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="@{userInfo==null?View.GONE:View.VISIBLE}"

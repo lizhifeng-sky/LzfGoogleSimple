@@ -22,14 +22,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mBinding = DataBindingUtil.inflate(LayoutInflater.from(this), R.layout.activity_main, null, false);
+        mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         setContentView(mBinding.getRoot());
         UserViewModel userViewModel = ViewModelProviders.of(MainActivity.this).get(UserViewModel.class);
         mBinding.setClick(() -> userViewModel.getUser().observe(MainActivity.this, userBean -> {
             if (userBean != null) {
                 mBinding.text.setText(userBean.toString());
-                if (mBinding.recycler.getVisibility() == View.GONE) {
-                    mBinding.recycler.setVisibility(View.VISIBLE);
+                if (mBinding.refresh.getVisibility() == View.GONE) {
+                    mBinding.refresh.setVisibility(View.VISIBLE);
                 }
             }
             mBinding.executePendingBindings();

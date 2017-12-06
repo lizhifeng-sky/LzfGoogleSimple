@@ -44,10 +44,29 @@ public class UserViewModel extends AndroidViewModel {
         /*
          *dataRepository 主要目的是封装网络请求 便于扩展其他数据来源
          * */
-        List<BindingAdapterType> list=new ArrayList<>();
-        list.add(new UserInfo("张三","23","http://new.antwk.com/drive//avatar/2017-11-28/ace25ba2-182a-4421-8d07-9f453394f4c3.jpg"));
-        list.add(new StudentInfo("xuesheng 张三"," xuesheng 28","http://blog.zhaiyifan.cn/uploads/wechat-public-qcode.jpg"));
-        MediatorLiveData<List<BindingAdapterType>> mediatorLiveData=new MediatorLiveData<>();
+        List<BindingAdapterType> list = new ArrayList<>();
+        list.add(new UserInfo("张三", "23", "http://new.antwk.com/drive//avatar/2017-11-28/ace25ba2-182a-4421-8d07-9f453394f4c3.jpg"));
+        list.add(new StudentInfo("xuesheng 张三", " xuesheng 28", "http://blog.zhaiyifan.cn/uploads/wechat-public-qcode.jpg"));
+        list.add(new UserInfo("张三", "23", "http://new.antwk.com/drive//avatar/2017-11-28/ace25ba2-182a-4421-8d07-9f453394f4c3.jpg"));
+        list.add(new StudentInfo("xuesheng 张三", " xuesheng 28", "http://blog.zhaiyifan.cn/uploads/wechat-public-qcode.jpg"));
+        list.add(new UserInfo("张三", "23", "http://new.antwk.com/drive//avatar/2017-11-28/ace25ba2-182a-4421-8d07-9f453394f4c3.jpg"));
+        list.add(new StudentInfo("xuesheng 张三", " xuesheng 28", "http://blog.zhaiyifan.cn/uploads/wechat-public-qcode.jpg"));
+        list.add(new UserInfo("张三", "23", "http://new.antwk.com/drive//avatar/2017-11-28/ace25ba2-182a-4421-8d07-9f453394f4c3.jpg"));
+        list.add(new StudentInfo("xuesheng 张三", " xuesheng 28", "http://blog.zhaiyifan.cn/uploads/wechat-public-qcode.jpg"));
+        list.add(new UserInfo("张三", "23", "http://new.antwk.com/drive//avatar/2017-11-28/ace25ba2-182a-4421-8d07-9f453394f4c3.jpg"));
+        list.add(new StudentInfo("xuesheng 张三", " xuesheng 28", "http://blog.zhaiyifan.cn/uploads/wechat-public-qcode.jpg"));
+        list.add(new UserInfo("张三", "23", "http://new.antwk.com/drive//avatar/2017-11-28/ace25ba2-182a-4421-8d07-9f453394f4c3.jpg"));
+        list.add(new StudentInfo("xuesheng 张三", " xuesheng 28", "http://blog.zhaiyifan.cn/uploads/wechat-public-qcode.jpg"));
+        list.add(new UserInfo("张三", "23", "http://new.antwk.com/drive//avatar/2017-11-28/ace25ba2-182a-4421-8d07-9f453394f4c3.jpg"));
+        list.add(new StudentInfo("xuesheng 张三", " xuesheng 28", "http://blog.zhaiyifan.cn/uploads/wechat-public-qcode.jpg"));
+        list.add(new UserInfo("张三", "23", "http://new.antwk.com/drive//avatar/2017-11-28/ace25ba2-182a-4421-8d07-9f453394f4c3.jpg"));
+        list.add(new StudentInfo("xuesheng 张三", " xuesheng 28", "http://blog.zhaiyifan.cn/uploads/wechat-public-qcode.jpg"));
+        list.add(new UserInfo("张三", "23", "http://new.antwk.com/drive//avatar/2017-11-28/ace25ba2-182a-4421-8d07-9f453394f4c3.jpg"));
+        list.add(new StudentInfo("xuesheng 张三", " xuesheng 28", "http://blog.zhaiyifan.cn/uploads/wechat-public-qcode.jpg"));
+        list.add(new UserInfo("张三", "23", "http://new.antwk.com/drive//avatar/2017-11-28/ace25ba2-182a-4421-8d07-9f453394f4c3.jpg"));
+        list.add(new StudentInfo("xuesheng 张三", " xuesheng 28", "http://blog.zhaiyifan.cn/uploads/wechat-public-qcode.jpg"));
+        list.add(new UserInfo("张三", "23", "http://new.antwk.com/drive//avatar/2017-11-28/ace25ba2-182a-4421-8d07-9f453394f4c3.jpg"));
+        MediatorLiveData<List<BindingAdapterType>> mediatorLiveData = new MediatorLiveData<>();
         mediatorLiveData.setValue(list);
         return mediatorLiveData;
     }
