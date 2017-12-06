@@ -15,12 +15,12 @@ class BaseBindingHolder extends RecyclerView.ViewHolder {
         super(dataBinding.getRoot());
         this.dataBinding=dataBinding;
     }
-    public void setVariable(int id,Object value){
+    void setVariable(int id, Object value){
         dataBinding.setVariable(id,value);
         dataBinding.executePendingBindings();
     }
 
-    public ViewDataBinding getBinding(){
+    ViewDataBinding getBinding(){
         return dataBinding;
     }
 }

@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by lizhifeng on 2017/12/1 0001.
  */
-
+@Deprecated
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     private Context context;
     private LayoutInflater layoutInflater;

@@ -16,7 +16,7 @@ import java.util.List;
  * @author lizhifeng
  * @date 2017/12/5 0005
  */
-
+@Deprecated
 public abstract class BaseBindingAdapter<DATA,BIND extends ViewDataBinding> extends RecyclerView.Adapter<BaseBindingHolder> {
     private List<DATA> data;
     private Context context;

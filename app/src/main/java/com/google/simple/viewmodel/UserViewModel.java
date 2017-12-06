@@ -9,7 +9,6 @@ import android.support.annotation.NonNull;
 import com.google.simple.model.DataRepository;
 import com.google.simple.model.StudentInfo;
 import com.google.simple.model.UserInfo;
-import com.google.simple.view.adapter.BaseBindingAdapter;
 import com.google.simple.view.adapter.BindingAdapterType;
 
 import java.util.ArrayList;
