@@ -9,7 +9,7 @@ public interface BaseUIFlow {
     /**
      *return获取布局id
      * */
-    int getLayoutId();
+    int getLayout();
     /**
      *初始化数据
      * */

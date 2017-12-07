@@ -6,6 +6,8 @@ import android.os.Environment;
 import java.io.File;
 import java.util.concurrent.TimeUnit;
 
+import io.reactivex.Observable;
+import io.reactivex.functions.Function;
 import lzf.common.bean.BaseRequestMode;
 import lzf.common.network.interceptor.LogInterceptor;
 import okhttp3.Cache;
@@ -13,8 +15,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
-import rx.Observable;
-import rx.functions.Func1;
+
 
 /**
  * Created by Administrator on 2017/8/10 0010.
@@ -60,14 +61,14 @@ public class SingleRetrofit {
         return apiService;
     }
 
-    public static <T> Observable<T> getData(Observable<BaseRequestMode<T>> observable, CustomSubscriber<T> customSubscriber) {
+    public static <T> Observable<T> getData(Observable<BaseRequestMode<T>> observable, CustomObserver<T> customSubscriber) {
         if (observable != null) {
             observable
                     .compose(new ScheduleTransformer<T>())
                     .subscribe(customSubscriber);
-            return observable.map(new Func1<BaseRequestMode<T>, T>() {
+            return observable.map(new Function<BaseRequestMode<T>, T>() {
                 @Override
-                public T call(BaseRequestMode<T> tBaseRequestMode) {
+                public T apply(BaseRequestMode<T> tBaseRequestMode) throws Exception {
                     return tBaseRequestMode.getData();
                 }
             });

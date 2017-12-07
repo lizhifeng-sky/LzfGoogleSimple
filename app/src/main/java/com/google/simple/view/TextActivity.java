@@ -8,33 +8,20 @@ import android.view.View;
 import com.google.simple.R;
 import com.google.simple.databinding.ActivityTextBinding;
 
+import lzf.common.base.BaseActivity;
 
-public class TextActivity extends AppCompatActivity {
+
+public class TextActivity extends BaseActivity {
+
     private ActivityTextBinding activityTextBinding;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        activityTextBinding= DataBindingUtil.setContentView(this,R.layout.activity_text);
-        activityTextBinding.setTitle1("事件绑定1");
-        activityTextBinding.setTitle2("事件绑定2");
-        activityTextBinding.setTitle3("事件绑定3");
-        activityTextBinding.setTitle4("change ok");
+    public int getLayout() {
+        return R.layout.activity_text;
+    }
 
-        activityTextBinding.setEvent(new EventListener() {
-            @Override
-            public void click1(View v) {
-                activityTextBinding.setTitle1("事件1方法调用");
-            }
+    @Override
+    public void initVariable() {
+        super.initVariable();
 
-            @Override
-            public void click2(View v) {
-                activityTextBinding.setTitle2("事件2方法调用");
-            }
-
-            @Override
-            public void cilck3(String s) {
-                activityTextBinding.setTitle3(s);
-            }
-        });
     }
 }

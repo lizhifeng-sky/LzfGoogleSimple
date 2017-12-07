@@ -1,9 +1,10 @@
 package com.google.simple.model;
 
+import io.reactivex.Observable;
 import lzf.common.bean.BaseRequestMode;
 import lzf.common.bean.UserBean;
+import lzf.common.mvp.BaseModel;
 import lzf.common.network.ScheduleTransformer;
-import rx.Observable;
 
 /**
  *
@@ -11,7 +12,7 @@ import rx.Observable;
  * @date 2017/11/30 0030
  */
 
-class NetworkProvider extends BaseModel{
+class NetworkProvider extends BaseModel {
     private static NetworkProvider modelProvider =new NetworkProvider();
     static NetworkProvider getInstance(){
         if (modelProvider ==null){

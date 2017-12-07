@@ -4,6 +4,7 @@ package lzf.common.network;
 import java.util.List;
 import java.util.Map;
 
+import io.reactivex.Observable;
 import lzf.common.bean.BaseRequestMode;
 import lzf.common.bean.CityBean;
 import lzf.common.bean.ConfigBean;
@@ -17,7 +18,6 @@ import retrofit2.http.POST;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
 import retrofit2.http.QueryMap;
-import rx.Observable;
 
 /**
  * Created by Administrator on 2017/8/10 0010.

@@ -1,18 +1,19 @@
 package lzf.common.network;
 
+import io.reactivex.ObservableSource;
+import io.reactivex.ObservableTransformer;
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.schedulers.Schedulers;
 import lzf.common.bean.BaseRequestMode;
-import rx.Observable;
-import rx.android.schedulers.AndroidSchedulers;
-import rx.schedulers.Schedulers;
 
 /**
  * Created by Administrator on 2017/8/11 0011.
  */
-public class ScheduleTransformer<T> implements Observable.Transformer<BaseRequestMode<T>,BaseRequestMode<T>> {
+public class ScheduleTransformer<T> implements ObservableTransformer<BaseRequestMode<T>,BaseRequestMode<T>> {
 
     @Override
-    public Observable<BaseRequestMode<T>> call(Observable<BaseRequestMode<T>> baseRequestModeObservable) {
-        return baseRequestModeObservable.subscribeOn(Schedulers.io())
+    public ObservableSource<BaseRequestMode<T>> apply(io.reactivex.Observable<BaseRequestMode<T>> upstream) {
+        return upstream.subscribeOn(Schedulers.io())
                 .unsubscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread());
     }

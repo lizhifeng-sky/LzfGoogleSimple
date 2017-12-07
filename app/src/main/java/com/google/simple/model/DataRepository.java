@@ -3,7 +3,7 @@ package com.google.simple.model;
 import android.arch.lifecycle.MediatorLiveData;
 
 import lzf.common.bean.UserBean;
-import lzf.common.network.CustomSubscriber;
+import lzf.common.network.CustomObserver;
 
 /**
  *
@@ -27,7 +27,7 @@ public class DataRepository {
     public void login(MediatorLiveData<UserBean> userBeanMediatorLiveData,
                       String name,
                       String pass) {
-        networkProvider.doLogin(name, pass).subscribe(new CustomSubscriber<UserBean>() {
+        networkProvider.doLogin(name, pass).subscribe(new CustomObserver<UserBean>() {
             @Override
             public void onSuccess(UserBean userBean) {
                 userBeanMediatorLiveData.setValue(userBean);

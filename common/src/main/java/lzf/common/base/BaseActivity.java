@@ -1,9 +1,12 @@
 package lzf.common.base;
 
+import android.databinding.DataBindingUtil;
+import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import lzf.common.R;
 import lzf.common.mvp.BaseView;
 
 
@@ -20,7 +23,6 @@ public abstract class BaseActivity extends AppCompatActivity implements BaseUIFl
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(getLayoutId());
         ActivityManager.getAppManager().addActivity(this);
         initVariable();
         initListener();

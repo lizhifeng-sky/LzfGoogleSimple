@@ -1,18 +1,20 @@
 package lzf.common.network;
 
 
+import io.reactivex.Observer;
+import io.reactivex.disposables.Disposable;
 import lzf.common.bean.BaseRequestMode;
 import lzf.common.mvp.BaseView;
-import rx.Subscriber;
+
 
 /**
- *
  * @author Administrator
  * @date 2017/8/10 0010
  */
-public abstract class CustomSubscriber<T> extends Subscriber<BaseRequestMode<T>> {
+public abstract class CustomObserver<T> implements Observer<BaseRequestMode<T>> {
 
     private BaseView baseView;
+    private Disposable disposable;
 
     /**
      * @param baseView activity 存在就显示 加载动画
@@ -20,7 +22,7 @@ public abstract class CustomSubscriber<T> extends Subscriber<BaseRequestMode<T>>
      * create at 2017/8/25 0025 10:00
      * description
      */
-    public CustomSubscriber(BaseView baseView) {
+    public CustomObserver(BaseView baseView) {
         this.baseView = baseView;
     }
 
@@ -29,22 +31,24 @@ public abstract class CustomSubscriber<T> extends Subscriber<BaseRequestMode<T>>
      * create at 2017/8/25 0025 10:00
      * description 不显示加载动画
      */
-    public CustomSubscriber() {
+    public CustomObserver() {
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
+    public void onSubscribe(Disposable d) {
+        this.disposable = d;
         if (baseView != null) {
             baseView.startLoading();
         }
     }
 
     @Override
-    public void onCompleted() {
-        unsubscribe();
+    public void onComplete() {
         if (baseView != null) {
             baseView.stopLoading();
+        }
+        if (disposable.isDisposed()) {
+            disposable.dispose();
         }
     }
 
@@ -53,6 +57,9 @@ public abstract class CustomSubscriber<T> extends Subscriber<BaseRequestMode<T>>
         if (baseView != null) {
             baseView.stopLoading();
             baseView.onError(e);
+        }
+        if (disposable.isDisposed()) {
+            disposable.dispose();
         }
     }
 

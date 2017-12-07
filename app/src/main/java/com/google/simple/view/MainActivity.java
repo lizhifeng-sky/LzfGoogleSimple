@@ -23,7 +23,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        setContentView(mBinding.getRoot());
         UserViewModel userViewModel = ViewModelProviders.of(MainActivity.this).get(UserViewModel.class);
         mBinding.setClick(() -> userViewModel.getUser().observe(MainActivity.this, userBean -> {
             if (userBean != null) {

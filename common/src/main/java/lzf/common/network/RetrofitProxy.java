@@ -8,7 +8,7 @@ import rx.functions.Func1;
  * Created by Administrator on 2017/8/28 0028.
  */
 public class RetrofitProxy {
-    public static <T> Observable<T> getData(Observable<BaseRequestMode<T>> observable, CustomSubscriber<T> customSubscriber) {
+    public static <T> Observable<T> getData(Observable<BaseRequestMode<T>> observable, CustomObserver<T> customSubscriber) {
         if (observable != null) {
             observable
                     .compose(new ScheduleTransformer<T>())

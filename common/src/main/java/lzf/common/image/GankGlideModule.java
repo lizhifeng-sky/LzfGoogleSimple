@@ -13,7 +13,9 @@ import com.bumptech.glide.module.GlideModule;
 import java.io.File;
 
 /**
- * Created by Administrator on 2017/8/15 0015.
+ *
+ * @author Administrator
+ * @date 2017/8/15 0015
  */
 public class GankGlideModule implements GlideModule {
     private static final int DISK_CACHE_SIZE = 100 * 1024 * 1024;
