@@ -17,7 +17,7 @@ public abstract class BaseFragment extends Fragment implements BaseUIFlow ,BaseV
     private View view;
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return LayoutInflater.from(getContext()).inflate(getLayoutId(), container, false);
+        return LayoutInflater.from(getContext()).inflate(getLayout(), container, false);
     }
 
     @Override

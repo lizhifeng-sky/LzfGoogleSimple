@@ -5,7 +5,7 @@
 
         <variable
             name="user"
-            type="com.google.simple.model.UserInfo"
+            type="com.google.simple.model.wrapper.UserItemWrapper"
             />
     </data>
 
@@ -20,7 +20,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:onClick="@{user.clickImage}"
-            app:avator="@{user.avator}"
+            app:avator="@{user.target.avator}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -29,7 +29,7 @@
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="@{user.name??`zhangsan`}"
+            android:text="@{user.target.name??`zhangsan`}"
             android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@id/avator"
             app:layout_constraintTop_toTopOf="parent" />
@@ -39,7 +39,7 @@
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="@{user.age}"
+            android:text="@{user.target.age}"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@id/avator"
             app:layout_constraintLeft_toRightOf="@id/avator"

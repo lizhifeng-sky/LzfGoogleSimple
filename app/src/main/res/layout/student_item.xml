@@ -5,7 +5,7 @@
 
         <variable
             name="student"
-            type="com.google.simple.model.StudentInfo" />
+            type="com.google.simple.model.wrapper.StudentItemWrapper" />
     </data>
 
     <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -19,7 +19,7 @@
             android:layout_width="120dp"
             android:layout_height="120dp"
             android:onClick="@{student.clickImage}"
-            app:avator="@{student.avator}"
+            app:avator="@{student.target.avator}"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -28,7 +28,7 @@
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="@{student.name??`zhangsan`}"
+            android:text="@{student.target.name??`zhangsan`}"
             android:textColor="#f00"
             android:textSize="14sp"
             app:layout_constraintLeft_toRightOf="@id/student_avator"
@@ -40,7 +40,7 @@
             android:layout_width="80dp"
             android:layout_height="40dp"
             android:gravity="center"
-            android:text="@{student.age}"
+            android:text="@{student.target.age}"
             android:textColor="#f00"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@id/student_avator"

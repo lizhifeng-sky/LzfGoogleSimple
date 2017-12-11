@@ -1,12 +1,8 @@
 package lzf.common.base;
 
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-
-import lzf.common.R;
 import lzf.common.mvp.BaseView;
 
 

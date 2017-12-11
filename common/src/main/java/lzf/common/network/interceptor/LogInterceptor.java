@@ -10,7 +10,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okhttp3.Response;
 import okhttp3.ResponseBody;
-import okhttp3.internal.http.HttpEngine;
+//import okhttp3.internal.http.HttpEngine;
 import okio.Buffer;
 import okio.BufferedSource;
 
@@ -48,9 +48,12 @@ public class LogInterceptor implements Interceptor {
         ResponseBody responseBody = response.body();
         String rBody = null;
 
-        if(HttpEngine.hasBody(response)) {
-            BufferedSource source = responseBody.source();
-            source.request(Long.MAX_VALUE); // Buffer the entire body.
+//        if(HttpEngine.hasBody(response)) {
+        BufferedSource source = null;
+        if (responseBody != null) {
+            source = responseBody.source();
+            source.request(Long.MAX_VALUE);
+            // Buffer the entire body.
             Buffer buffer = source.buffer();
 
             Charset charset = UTF8;
@@ -62,9 +65,11 @@ public class LogInterceptor implements Interceptor {
                     e.printStackTrace();
                 }
             }
-            rBody = buffer.clone().readString(charset);
+            if (charset != null) {
+                rBody = buffer.clone().readString(charset);
+            }
         }
-
+//        }
         System.out.println("*********************接收*********************");
         System.out.println(String.format("收到响应 %s %s %s\n请求url：%s\n请求body：%s\n响应body：%s",
                 response.code(), response.message(), tookMs, response.request().url(), body, rBody));

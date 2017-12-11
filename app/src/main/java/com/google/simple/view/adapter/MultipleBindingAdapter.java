@@ -8,12 +8,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.google.simple.BR;
+import com.google.simple.model.wrapper.LayoutWrapper;
 
-import java.util.Iterator;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  *
@@ -22,10 +19,10 @@ import java.util.Map;
  */
 
 public  class MultipleBindingAdapter extends RecyclerView.Adapter<BaseBindingHolder> {
-    private List<? extends BindingAdapterType> data;
+    private List<? extends LayoutWrapper> data;
     private Context context;
 
-    public MultipleBindingAdapter(List<? extends BindingAdapterType> data, Context context) {
+    public MultipleBindingAdapter(List<? extends LayoutWrapper> data, Context context) {
         this.data = data;
         this.context = context;
     }
@@ -33,7 +30,6 @@ public  class MultipleBindingAdapter extends RecyclerView.Adapter<BaseBindingHol
     @Override
     public BaseBindingHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         ViewDataBinding viewDataBinding= DataBindingUtil.inflate(LayoutInflater.from(context), viewType, parent, false);
-
         return new BaseBindingHolder(viewDataBinding);
     }
 
